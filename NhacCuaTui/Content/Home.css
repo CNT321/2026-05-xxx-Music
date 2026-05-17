@@ -642,10 +642,9 @@ body {
 .list-hot-singers {
     margin-top: 10px;
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 90px));
-    grid-template-rows: repeat(6, 95px);
-    row-gap: 10px;
-    column-gap: 10px;
+    grid-template-columns: repeat( 3, 1fr); /*repeat(3, minmax(0, 90px));*/
+    grid-template-rows: repeat(6, minmax(80px, auto)); /*repeat(6, 95px)*/
+    gap: 10px;
 }
 
 .hot-singers-item {
@@ -664,6 +663,8 @@ body {
     background-size: cover;
     background-position: center;
     position: relative;
+    border-radius: 10px;
+    overflow: hidden;
 }
 
 .list-hot-singers .big {
@@ -672,28 +673,34 @@ body {
 
 .hot-singer-name {
     position: absolute;
-    color: #fff;
-    font-size: 14px;
-    font-weight: 500;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
+
+    color: #fff;
+
+    font-size: 14px;
+    font-weight: 500;
+
     border: 1px solid #dee2e6;
     background-color: rgba(0, 0, 0, 0.3);
+
     display: flex;
     justify-content: center;
     align-items: center;
-    opacity: 0;
-    transition: all 0.5s;
-    top: 0;
-    left: 0;
+
     text-align: center;
+
+    opacity: 0;
+
+    transform: scale(0.8);
+    transition: all 0.5s;
+    
 }
 
 .img-hot:hover .hot-singer-name {
     opacity: 1;
-}
-
-.img-hot:hover .hot-singer-name {
     transform: scale(1);
 }
 
